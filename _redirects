@@ -1,0 +1,25 @@
+# Twenty-One Medical — redirects
+# Applies to the twentyonemedical.com Netlify site
+# (repo GrowWithAmeliorateLLC/twenty-one-medical, published from the repo root).
+# Targets are root-relative.
+
+# ---------------------------------------------------------------------------
+# LEGACY ARTICLE 301s — NOT YET POPULATED
+#
+# The previous WordPress site published ~40 articles. Several still rank; the
+# Tirzepatide article ranks 2nd nationally and is currently 404ing, as is the
+# blog index. Real slugs must be recovered from web archives / Search Console
+# before anything is written here. Do not guess slugs — a wrong 301 is worse
+# than a 404 because it hides the problem.
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# LEGACY SERVICE-LINK 301s — NOT YET POPULATED
+#
+# Six of the nine service links on the current homepage 404. Map each old URL
+# to its new service page once the page list is final.
+# ---------------------------------------------------------------------------
+
+# Canonical host: netlify.app -> apex (belt and braces; Netlify also handles
+# www -> apex once the primary domain is set).
+https://twenty-one-medical.netlify.app/*  https://twentyonemedical.com/:splat  301!

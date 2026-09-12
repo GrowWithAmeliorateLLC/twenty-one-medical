@@ -1,0 +1,11 @@
+# Twenty-One Medical — twentyonemedical.com
+# Pre-launch: the staging URL should not be indexed. Swap to a permissive
+# robots.txt at cutover, when the domain points here.
+
+User-agent: *
+Disallow: /
+
+# At launch, replace everything above with:
+# User-agent: *
+# Allow: /
+# Sitemap: https://twentyonemedical.com/sitemap.xml
