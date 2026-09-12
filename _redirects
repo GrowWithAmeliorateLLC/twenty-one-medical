@@ -20,6 +20,13 @@
 # to its new service page once the page list is final.
 # ---------------------------------------------------------------------------
 
-# Canonical host: netlify.app -> apex (belt and braces; Netlify also handles
-# www -> apex once the primary domain is set).
-https://twenty-one-medical.netlify.app/*  https://twentyonemedical.com/:splat  301!
+# ---------------------------------------------------------------------------
+# CANONICAL HOST — ENABLE AT CUTOVER, NOT BEFORE
+#
+# Uncomment the line below only once twentyonemedical.com points at this
+# Netlify project. While the domain still resolves to the old GoDaddy Airo
+# site, this rule bounces the staging URL straight to the OLD live site,
+# which makes the work-in-progress impossible to preview.
+#
+# https://twenty-one-medical.netlify.app/*  https://twentyonemedical.com/:splat  301!
+# ---------------------------------------------------------------------------
