@@ -1,0 +1,8 @@
+# Twenty-One Medical — twentyonemedical.com
+# Static site. No build step; Netlify publishes the repo root.
+[build]
+  publish = "."
+
+# Keep Netlify "Pretty URLs" off so .html links resolve exactly as written.
+[build.processing.html]
+  pretty_urls = false
