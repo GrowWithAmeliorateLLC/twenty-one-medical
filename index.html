@@ -5,6 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Twenty-One Medical — site in development</title>
+
+<!-- BugHerd client feedback — staging hosts only.
+     Loads on *.netlify.app (staging + deploy previews) and nowhere else,
+     so nothing has to be removed at cutover. -->
+<script>
+(function () {
+  var h = window.location.hostname;
+  if (h.indexOf(".netlify.app") === -1 && h !== "localhost" && h !== "127.0.0.1") return;
+  var s = document.createElement("script");
+  s.type = "text/javascript";
+  s.async = true;
+  s.src = "https://www.bugherd.com/sidebarv2.js?apikey=fqhvagajwsftqvzzpdaqkg";
+  document.head.appendChild(s);
+})();
+</script>
+
 <style>
   :root{--ink:#0a0a0a;--soft:#555;--line:rgba(10,10,10,.12);--ground:#faf7f2;--accent:#4b68b1}
   *{margin:0;padding:0;box-sizing:border-box}
