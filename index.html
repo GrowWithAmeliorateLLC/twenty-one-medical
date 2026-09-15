@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Twenty-One Medical — site in development</title>
+<meta name="description" content="PA-led clinic in Pineville, NC offering medical weight loss, hormone replacement, peptide and IV therapy, plus family medicine and urgent care.">
+<title>Twenty-One Medical | Weight Loss, HRT &amp; Urgent Care in Pineville, NC</title>
 
 <!-- BugHerd client feedback — staging hosts only.
      Loads on *.netlify.app (staging + deploy previews) and nowhere else,
@@ -20,32 +21,470 @@
   document.head.appendChild(s);
 })();
 </script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#0a0a0a;--soft:#555;--line:rgba(10,10,10,.12);--ground:#faf7f2;--accent:#4b68b1}
+  :root{
+    --navy:#102a4c;
+    --navy-deep:#0a1c33;
+    --navy-soft:#2b4a75;
+    --teal:#3fa9a4;
+    --teal-wash:#dcefee;
+    --marigold:#e8a723;
+    --coral:#e0603a;
+    --cream:#f6efe4;
+    --paper:#fdfaf5;
+    --card:#ffffff;
+    --ink:#16202e;
+    --ink-soft:#56657a;
+    --ink-faint:#8494a8;
+    --rule:rgba(16,42,76,.14);
+    --rule-soft:rgba(16,42,76,.07);
+    --shadow-sm:0 1px 3px rgba(16,42,76,.07);
+    --shadow-lg:0 18px 50px -26px rgba(16,42,76,.42);
+    --r:14px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --navy:#8fb3e0;
+      --navy-deep:#0c1622;
+      --navy-soft:#a9c4e8;
+      --teal:#5cc9c3;
+      --teal-wash:#14322f;
+      --marigold:#f0bc4e;
+      --coral:#f07d5b;
+      --cream:#16202b;
+      --paper:#101822;
+      --card:#18222e;
+      --ink:#e8eef6;
+      --ink-soft:#a3b2c4;
+      --ink-faint:#7c8b9e;
+      --rule:rgba(232,238,246,.17);
+      --rule-soft:rgba(232,238,246,.09);
+      --shadow-sm:0 1px 3px rgba(0,0,0,.5);
+      --shadow-lg:0 18px 50px -26px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --navy:#8fb3e0; --navy-deep:#0c1622; --navy-soft:#a9c4e8;
+    --teal:#5cc9c3; --teal-wash:#14322f; --marigold:#f0bc4e; --coral:#f07d5b;
+    --cream:#16202b; --paper:#101822; --card:#18222e;
+    --ink:#e8eef6; --ink-soft:#a3b2c4; --ink-faint:#7c8b9e;
+    --rule:rgba(232,238,246,.17); --rule-soft:rgba(232,238,246,.09);
+    --shadow-sm:0 1px 3px rgba(0,0,0,.5); --shadow-lg:0 18px 50px -26px rgba(0,0,0,.8);
+  }
+
   *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--ground);
-       color:var(--ink);line-height:1.6;display:grid;place-items:center;min-height:100vh;padding:24px}
-  main{max-width:34rem}
-  h1{font-size:1.6rem;letter-spacing:-.02em;margin-bottom:.5rem}
-  p{color:var(--soft)}
-  p + p{margin-top:.75rem}
-  .tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.12em;
-       text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-  hr{border:0;border-top:1px solid var(--line);margin:1.5rem 0}
-  small{font-size:.8rem;color:var(--soft)}
+  body{font-family:'Karla',system-ui,sans-serif;background:var(--paper);color:var(--ink);
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Archivo',system-ui,sans-serif;font-weight:800;line-height:1.05;
+    letter-spacing:-.035em;text-wrap:balance}
+  .eyebrow{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em}
+  img{max-width:100%}
+  a{color:inherit}
+
+  .shell{max-width:74rem;margin:0 auto;padding-left:22px;padding-right:22px}
+
+  /* ---------- photo placeholders ---------- */
+  .ph{background:var(--teal-wash);border:1.5px dashed var(--teal);border-radius:var(--r);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;gap:4px;padding:22px;color:var(--navy);min-height:150px;position:relative}
+  .ph::before{content:"PHOTO";position:absolute;top:10px;left:12px;font-size:.58rem;
+    font-weight:800;letter-spacing:.16em;color:var(--teal);opacity:.85}
+  .ph b{font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:-.02em;font-size:1.02rem;line-height:1.2}
+  .ph span{font-size:.78rem;color:var(--ink-soft);max-width:26ch;line-height:1.4}
+  .ph.dark{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.4);color:#fff}
+  .ph.dark span{color:rgba(255,255,255,.72)}
+  .ph.dark::before{color:rgba(255,255,255,.6)}
+
+  /* ---------- nav ---------- */
+  nav{background:var(--paper);border-bottom:1px solid var(--rule-soft);position:relative;z-index:5}
+  .nav-in{display:flex;align-items:center;gap:22px;padding-block:16px;flex-wrap:wrap}
+  .logo{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.22rem;letter-spacing:-.04em;
+    color:var(--navy);display:flex;align-items:center;gap:8px}
+  .logo .dot{width:26px;height:26px;border-radius:50%;background:var(--teal);display:grid;
+    place-items:center;font-size:.72rem;color:#04211f;font-weight:800;letter-spacing:0}
+  .logo span{color:var(--teal)}
+  .nav-links{display:flex;gap:19px;font-size:.87rem;font-weight:500;color:var(--ink-soft);flex-wrap:wrap}
+  .nav-links a{text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-links .car{font-size:.55rem;opacity:.5}
+  .nav-sp{flex:1 1 auto}
+  .nav-icon{width:34px;height:34px;border-radius:50%;border:1px solid var(--rule);
+    display:grid;place-items:center;color:var(--ink-soft);font-size:.9rem;text-decoration:none}
+  .btn{display:inline-block;border:none;border-radius:999px;font-family:'Archivo',sans-serif;letter-spacing:-.01em;
+    font-weight:700;font-size:.86rem;padding:11px 22px;cursor:pointer;text-decoration:none;
+    transition:transform .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-gold{background:var(--marigold);color:#2a1c00}
+  .btn-teal{background:var(--teal);color:#04211f}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--rule)}
+
+  /* ---------- hero ---------- */
+  .hero{background:var(--paper);padding-block:52px 112px;position:relative;overflow:hidden}
+  /* soft contour pattern, drawn not imported */
+  .hero .contours{position:absolute;inset:0;opacity:.5;pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+    gap:44px;align-items:center;position:relative;z-index:2}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+
+  .tagpill{display:inline-flex;align-items:center;gap:7px;background:var(--card);
+    border:1px solid var(--rule);border-radius:999px;padding:6px 15px 6px 11px;
+    font-size:.71rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+  .tagpill i{width:15px;height:15px;border-radius:50%;background:var(--teal);display:grid;
+    place-items:center;font-style:normal;font-size:.68rem;color:#04211f;line-height:1}
+
+  .hero h1{font-size:clamp(2.4rem,5.6vw,4rem);margin:20px 0 18px;color:var(--navy)}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero p.lede{font-size:1.05rem;color:var(--ink-soft);max-width:44ch}
+  .hero-cta{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;align-items:center}
+  .callpill{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;
+    font-size:.93rem;color:var(--navy)}
+  .callpill i{width:38px;height:38px;border-radius:50%;background:var(--teal-wash);
+    border:1px solid var(--teal);display:grid;place-items:center;font-style:normal;
+    font-size:.95rem;color:var(--navy)}
+
+  /* portrait sits inside a big tinted circle, per the reference layouts */
+  .hero-art{position:relative;display:grid;place-items:center;min-height:420px}
+  .hero-art .disc{position:absolute;width:min(100%,26rem);aspect-ratio:1;border-radius:50%;
+    background:var(--teal-wash);z-index:0}
+  .hero-art .ph{position:relative;z-index:1;width:min(74%,19rem);min-height:320px;
+    background:transparent;border-color:var(--navy);border-radius:200px 200px 20px 20px}
+  .badge{position:absolute;z-index:3;bottom:12px;left:0;background:var(--card);
+    border-radius:999px;box-shadow:var(--shadow-lg);border:1px solid var(--rule-soft);
+    padding:11px 18px 11px 13px;display:flex;align-items:center;gap:11px;max-width:15rem}
+  .badge .yrs{font-family:'Archivo',sans-serif;font-weight:800;font-size:1.5rem;
+    letter-spacing:-.045em;color:var(--navy);line-height:1}
+  .badge p{font-size:.71rem;line-height:1.3;color:var(--ink-soft)}
+  @media(max-width:520px){.badge{position:static;margin-top:14px;max-width:none}}
+
+  /* ---------- booking bar ---------- */
+  .bookbar-wrap{margin-top:-58px;position:relative;z-index:3}
+  .bookbar{background:var(--card);border-radius:var(--r);box-shadow:var(--shadow-lg);
+    border:1px solid var(--rule-soft);padding:20px 22px}
+  .bookbar .bb-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .bookbar .bb-head .eyebrow{color:var(--teal)}
+  .bookbar .bb-head small{font-size:.78rem;color:var(--ink-faint)}
+  .bb-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;align-items:end}
+  @media(max-width:800px){.bb-row{grid-template-columns:1fr}}
+  .fld{display:flex;flex-direction:column;gap:5px}
+  .fld label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .fld select,.fld input{font-family:inherit;font-size:.9rem;padding:11px 12px;border-radius:9px;
+    border:1px solid var(--rule);background:var(--paper);color:var(--ink);width:100%}
+  .fld select:focus,.fld input:focus{outline:2px solid var(--teal);outline-offset:1px}
+
+  /* ---------- stat row ---------- */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:0;
+    margin-top:52px;border:1px solid var(--rule);border-radius:var(--r);overflow:hidden;background:var(--card)}
+  .stat{padding:22px 24px;border-right:1px solid var(--rule-soft)}
+  .stat:last-child{border-right:none}
+  @media(max-width:760px){.stat{border-right:none;border-bottom:1px solid var(--rule-soft)}
+    .stat:last-child{border-bottom:none}}
+  .stat .n{font-family:'Archivo',sans-serif;font-size:2.05rem;font-weight:800;letter-spacing:-.045em;line-height:1;
+    color:var(--navy);font-variant-numeric:tabular-nums}
+  .stat .l{font-size:.82rem;color:var(--ink-soft);margin-top:7px;line-height:1.4}
+
+  section.band{padding-block:72px}
+  .band.tint{background:var(--cream)}
+  .sec-head{max-width:56ch;margin-bottom:34px}
+  .sec-head .eyebrow{color:var(--teal)}
+  .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin:12px 0 12px}
+  .sec-head p{color:var(--ink-soft)}
+
+  /* ---------- split blocks ---------- */
+  .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:46px;align-items:center}
+  @media(max-width:860px){.split{grid-template-columns:1fr;gap:28px}}
+  .split.flip .txt{order:2}
+  @media(max-width:860px){.split.flip .txt{order:0}}
+  .split h2{font-size:clamp(1.6rem,3.2vw,2.15rem);margin-bottom:14px}
+  .split p{color:var(--ink-soft);margin-bottom:12px}
+  .split .eyebrow{color:var(--teal);margin-bottom:10px;display:block}
+  .ph.round{border-radius:50%;aspect-ratio:1;max-width:26rem;margin-inline:auto;min-height:0}
+  .credbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+  .credbar span{background:var(--card);border:1px solid var(--rule);border-radius:999px;
+    padding:6px 14px;font-size:.79rem;font-weight:600}
+
+  /* ---------- services ---------- */
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:18px}
+  .svc{background:var(--card);border:1px solid var(--rule-soft);border-radius:var(--r);
+    overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+  .svc .ph{border-radius:0;border:none;border-bottom:1.5px dashed var(--teal);min-height:132px}
+  .svc .sv-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .svc h3{font-size:1.12rem}
+  .svc p{font-size:.88rem;color:var(--ink-soft);flex:1}
+  .svc .go{font-size:.82rem;font-weight:700;color:var(--teal);text-decoration:none}
+
+  /* ---------- clinical strip ---------- */
+  .clin{background:var(--navy-deep);color:#fff;border-radius:var(--r);padding:34px 34px}
+  .clin h2{color:#fff;font-size:1.7rem;margin-bottom:8px}
+  .clin > p{color:rgba(255,255,255,.76);max-width:56ch;margin-bottom:22px}
+  .clin-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:14px}
+  .clin-item{background:rgba(255,255,255,.07);border-radius:11px;padding:16px 18px}
+  .clin-item b{display:block;font-family:'Archivo',sans-serif;font-weight:700;letter-spacing:-.02em;font-size:1.02rem;margin-bottom:4px}
+  .clin-item span{font-size:.83rem;color:rgba(255,255,255,.72);line-height:1.45}
+
+  /* ---------- visit / map ---------- */
+  .visit-media{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:800px){.visit-media{grid-template-columns:1fr}}
+  .visit-media .ph{min-height:290px}
+  .ph.map{background:var(--card);border-style:solid;border-color:var(--rule)}
+  .ph.map::before{content:"MAP";color:var(--ink-faint)}
+  .visit-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:18px;margin-top:22px}
+  .vf b{display:block;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:5px}
+  .vf p{font-size:.93rem}
+
+  /* ---------- reviews ---------- */
+  .rev-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:16px}
+  .rev{background:var(--card);border:1px solid var(--rule-soft);border-radius:var(--r);
+    padding:22px;box-shadow:var(--shadow-sm)}
+  .stars{color:var(--marigold);font-size:.9rem;letter-spacing:.1em;margin-bottom:10px}
+  .rev p{font-size:1.0rem;line-height:1.5;margin-bottom:12px}
+  .rev cite{font-style:normal;font-size:.82rem;color:var(--ink-faint);font-weight:600}
+
+  /* ---------- final cta ---------- */
+  .final{background:var(--teal-wash);border-radius:var(--r);padding:44px 38px;text-align:center}
+  .final h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:12px}
+  .final p{color:var(--ink-soft);max-width:50ch;margin:0 auto 24px}
+  .final .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+  footer.site{background:var(--navy-deep);color:rgba(255,255,255,.72);padding-block:40px;margin-top:0}
+  .f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr));gap:26px}
+  footer.site b{color:#fff;display:block;margin-bottom:9px;font-size:.78rem;
+    letter-spacing:.12em;text-transform:uppercase}
+  footer.site p,footer.site li{font-size:.87rem;line-height:1.7}
+  footer.site ul{list-style:none}
+
 </style>
 </head>
 <body>
-<main>
-  <span class="tag">In development</span>
-  <h1>Twenty-One Medical</h1>
-  <p>This is the staging address for the new Twenty-One Medical website. It is not the live
-     site and is not indexed by search engines.</p>
-  <p>The practice's current site remains at
-     <a href="https://twentyonemedical.com">twentyonemedical.com</a> until cutover.</p>
-  <hr>
-  <small>Built by Grow With Ameliorate LLC &middot; Better Systems. Smarter Growth.</small>
-</main>
+<nav>
+  <div class="shell nav-in">
+    <div class="logo"><span class="dot">21</span>Twenty-One <span>Medical</span></div>
+    <div class="nav-sp"></div>
+    <div class="nav-links">
+      <a href="#">Wellness <span class="car">&#9660;</span></a>
+      <a href="#">Clinical Care <span class="car">&#9660;</span></a>
+      <a href="#">Laser</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <a class="nav-icon" href="#" aria-label="Search">&#9906;</a>
+    <a class="btn btn-gold" href="#">Book a Visit</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="contours" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke="var(--teal)" stroke-opacity=".16" stroke-width="1.2">
+      <path d="M-40 470 C 180 400, 300 520, 520 452 S 900 360, 1240 424"/>
+      <path d="M-40 508 C 180 438, 300 558, 520 490 S 900 398, 1240 462"/>
+      <path d="M-40 546 C 180 476, 300 596, 520 528 S 900 436, 1240 500"/>
+      <path d="M-40 120 C 220 60, 340 170, 560 104 S 940 20, 1240 78"/>
+      <path d="M-40 158 C 220 98, 340 208, 560 142 S 940 58, 1240 116"/>
+    </g>
+  </svg>
+  <div class="shell hero-grid">
+    <div>
+      <span class="tagpill"><i>+</i> PA-led care &middot; Pineville, NC</span>
+      <h1>Real medicine behind every <em>wellness</em> result.</h1>
+      <p class="lede">Medical weight loss, hormone replacement, peptide and IV therapy &mdash; run on labs, examination and follow-up. Not a med spa with a prescription pad.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="#">Book an appointment</a>
+        <a class="callpill" href="tel:7042275060"><i>&#9742;</i>704-227-5060</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="disc"></div>
+      <div class="ph">
+        <b>Shawn O'Keefe, PA-C</b>
+        <span>Portrait</span>
+      </div>
+      <div class="badge">
+        <span class="yrs">20+</span>
+        <p>years in orthopedic surgery before opening the practice</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="shell bookbar-wrap">
+  <div class="bookbar">
+    <div class="bb-head">
+      <span class="eyebrow">Book in about a minute</span>
+      <small>Real-time availability</small>
+    </div>
+    <div class="bb-row">
+      <div class="fld">
+        <label for="svc">What do you need?</label>
+        <select id="svc">
+          <option>Medical weight loss</option>
+          <option>Hormone replacement</option>
+          <option>Peptide therapy</option>
+          <option>IV therapy</option>
+          <option>Laser treatment</option>
+          <option>Urgent care / walk-in</option>
+          <option>DOT physical</option>
+        </select>
+      </div>
+      <div class="fld">
+        <label for="vt">Visit type</label>
+        <select id="vt"><option>In person &mdash; Pineville</option><option>Telehealth (NC &amp; SC)</option></select>
+      </div>
+      <div class="fld">
+        <label for="pt">Patient</label>
+        <select id="pt"><option>New patient</option><option>Returning patient</option></select>
+      </div>
+      <a class="btn btn-teal" href="#" style="padding:13px 26px">See times</a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">Walk-in</div><div class="l">urgent care and IV therapy with no appointment needed</div></div>
+    <div class="stat"><div class="n">5&ndash;100+</div><div class="l">ages treated, from school physicals to hormone therapy</div></div>
+    <div class="stat"><div class="n">1</div><div class="l">clinic instead of four &mdash; primary, urgent, ortho and wellness</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">states covered by telehealth, North and South Carolina</div></div>
+  </div>
+</div>
+
+<section class="band">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow">What we treat</span>
+      <h2>The programs people come to us for.</h2>
+      <p>Every one of these is medically supervised, starts with labs, and includes the follow-up that makes it actually work.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ph"></div>
+        <div class="sv-body"><h3>Medical Weight Loss</h3>
+          <p>Exam, labs, body composition and GLP-1 therapy with semaglutide or tirzepatide &mdash; plus the visits that keep it on track.</p>
+          <a class="go" href="#">See the program &rarr;</a></div>
+      </div>
+      <div class="svc">
+        <div class="ph"></div>
+        <div class="sv-body"><h3>Hormone Replacement</h3>
+          <p>Men's and women's HRT, including EvexiPEL pellets placed in-house. Full hormone panel first, monitoring throughout.</p>
+          <a class="go" href="#">See the program &rarr;</a></div>
+      </div>
+      <div class="svc">
+        <div class="ph"></div>
+        <div class="sv-body"><h3>Peptide Therapy</h3>
+          <p>Protocols built around your labs and your goals, supervised start to finish.</p>
+          <a class="go" href="#">See the program &rarr;</a></div>
+      </div>
+      <div class="svc">
+        <div class="ph"></div>
+        <div class="sv-body"><h3>IV Therapy</h3>
+          <p>Hydration, immune, energy, recovery and beauty drips &mdash; mixed and run by the clinical team in 45 to 60 minutes.</p>
+          <a class="go" href="#">See the drip menu &rarr;</a></div>
+      </div>
+      <div class="svc">
+        <div class="ph"></div>
+        <div class="sv-body"><h3>Laser Treatments</h3>
+          <p>Laser hair removal and skin rejuvenation on medical-grade equipment, under medical supervision.</p>
+          <a class="go" href="#">See treatments &rarr;</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band tint">
+  <div class="shell split flip">
+    <div class="ph round">
+      <b>Shawn with a patient</b>
+    </div>
+    <div class="txt">
+      <span class="eyebrow">Meet your provider</span>
+      <h2>Twenty years in orthopedic surgery. Then this practice.</h2>
+      <p>Shawn O'Keefe spent two decades in orthopedic surgery before opening Twenty-One Medical. That background is why the wellness side of this clinic runs on labs, examination and follow-up rather than a questionnaire and a prescription.</p>
+      <p>It is also why one clinic can cover a child's sports physical, a DOT exam, a torn meniscus and a hormone program without sending you anywhere else.</p>
+      <div class="credbar"><span>PA-C</span><span>Orthopedics &amp; sports medicine</span><span>Family &amp; urgent care</span><span>Telehealth NC &amp; SC</span></div>
+      <div style="margin-top:22px"><a class="btn btn-outline" href="#">More about Shawn</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
+    <div class="clin">
+      <h2>The clinical side, in the same building.</h2>
+      <p>Walk-in care, family medicine and orthopedics run alongside the wellness programs &mdash; same provider, same records, no referral across town.</p>
+      <div class="clin-list">
+        <div class="clin-item"><b>Family medicine</b><span>Diabetes, hypertension, routine physicals, STD testing, PAP smears and lab services.</span></div>
+        <div class="clin-item"><b>Urgent care</b><span>Minor wounds, sick visits, flu, strep, UTI and ear infections. No appointment needed.</span></div>
+        <div class="clin-item"><b>Orthopedics</b><span>Sprains, fractures, joint injections, X-ray and casting, with same-day evaluation.</span></div>
+        <div class="clin-item"><b>DOT physicals</b><span>Certified exams for commercial drivers, usually same week.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band tint">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow">Find us</span>
+      <h2>Find us in Pineville.</h2>
+      <p>Minutes from Ballantyne, Fort Mill and south Charlotte.</p>
+    </div>
+    <div class="visit-media">
+      <div class="ph">
+        <b>Storefront</b>
+      </div>
+      <div class="ph map">
+        <b>Map</b>
+      </div>
+    </div>
+    <div class="visit-facts">
+      <div class="vf"><b>Address</b><p>Pineville, NC 28134</p></div>
+      <div class="vf"><b>Phone</b><p><a href="tel:7042275060">704-227-5060</a></p></div>
+      <div class="vf"><b>Hours</b><p>Mon&ndash;Fri 8am&ndash;6pm<br>Sat 9am&ndash;1pm</p></div>
+      <div class="vf"><b>Walk-ins</b><p>Urgent care and IV therapy, no appointment needed</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="shell">
+    <div class="sec-head">
+      <span class="eyebrow">In patients' words</span>
+      <h2>What people actually say.</h2>
+      <p>Reviews from patients treated at the Pineville clinic.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Review text&rdquo;</p><cite>Google review</cite></div>
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Review text&rdquo;</p><cite>Google review</cite></div>
+      <div class="rev"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>&ldquo;Review text&rdquo;</p><cite>Google review</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="band tint">
+  <div class="shell">
+    <div class="final">
+      <h2>Book with the provider you'll actually see.</h2>
+      <p>Same-day slots for urgent care and IV therapy. Telehealth for North and South Carolina.</p>
+      <div class="row">
+        <a class="btn btn-gold" href="#">Book online</a>
+        <a class="btn btn-outline" href="tel:7042275060">Call 704-227-5060</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="shell f-grid">
+    <div><div class="logo" style="margin-bottom:10px">Twenty-One <span>Medical</span></div>
+      <p>Complete care for every generation, in Pineville, North Carolina.</p></div>
+    <div><b>Programs</b><ul><li>Medical Weight Loss</li><li>Hormone Replacement</li><li>Peptide Therapy</li><li>IV Therapy</li><li>Laser Treatments</li></ul></div>
+    <div><b>Clinical</b><ul><li>Family Medicine</li><li>Urgent Care</li><li>Orthopedics</li><li>DOT Physicals</li></ul></div>
+    <div><b>Visit</b><ul><li>Pineville, NC 28134</li><li>704-227-5060</li><li>Book online</li><li>Patient referrals</li></ul></div>
+  </div>
+</footer>
 </body>
 </html>
