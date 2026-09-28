@@ -1,0 +1,11 @@
+/* Loaded after site.css on the booking page only.
+   DrChrono renders the practice logo above the form, which pushed the
+   Available Times calendar and the Submit button below a 1180px frame.
+   Measured on staging: the full widget needs ~1900px at 650px wide. */
+.embed-scale iframe{height:1900px}
+@media(max-width:700px){
+  .embed-scale{height:1370px}
+}
+@media(max-width:480px){
+  .embed-scale{height:1050px}
+}
