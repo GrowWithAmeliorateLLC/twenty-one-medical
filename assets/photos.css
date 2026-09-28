@@ -1,0 +1,17 @@
+/* Real photography dropped into the slots the dashed placeholders held.
+   Loaded after site.css. */
+
+.shot{display:block;width:100%;object-fit:cover;background:var(--teal-wash)}
+
+/* service cards */
+.svc .shot{height:172px;border-bottom:1px solid var(--rule-soft)}
+
+/* the circular crop in the About split */
+.shot.round{border-radius:50%;aspect-ratio:1;max-width:26rem;margin-inline:auto}
+
+/* storefront / location blocks */
+.visit-media .shot{height:290px;border-radius:var(--r)}
+.contact-shot{height:220px;border-radius:var(--r)}
+
+/* a caption under a photo, for crediting or explaining what it shows */
+.shot-note{font-size:.78rem;color:var(--ink-faint);margin-top:7px}
