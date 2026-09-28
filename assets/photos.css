@@ -1,13 +1,17 @@
 /* Real photography dropped into the slots the dashed placeholders held.
-   Loaded after site.css. */
+   Loaded after site.css.
 
-.shot{display:block;width:100%;object-fit:cover;background:var(--teal-wash)}
+   NOTE: these images deliberately carry no loading="lazy". It did not fire
+   reliably in testing - the images stayed unloaded even once scrolled into
+   view - and a blank card is worse than an eager fetch on a seven-page site. */
+
+.shot{display:block;width:100%;height:auto;object-fit:cover;background:var(--teal-wash)}
 
 /* service cards */
 .svc .shot{height:172px;border-bottom:1px solid var(--rule-soft)}
 
 /* the circular crop in the About split */
-.shot.round{border-radius:50%;aspect-ratio:1;max-width:26rem;margin-inline:auto}
+.shot.round{aspect-ratio:1;height:auto;border-radius:50%;max-width:26rem;margin-inline:auto}
 
 /* storefront / location blocks */
 .visit-media .shot{height:290px;border-radius:var(--r)}
