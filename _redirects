@@ -4,20 +4,45 @@
 # Targets are root-relative.
 
 # ---------------------------------------------------------------------------
-# LEGACY ARTICLE 301s — NOT YET POPULATED
+# LEGACY SERVICE-LINK 301s
 #
-# The previous WordPress site published ~40 articles. Several still rank; the
-# Tirzepatide article ranks 2nd nationally and is currently 404ing, as is the
-# blog index. Real slugs must be recovered from web archives / Search Console
-# before anything is written here. Do not guess slugs — a wrong 301 is worse
-# than a 404 because it hides the problem.
+# Six of the nine service links on the old homepage returned soft 404s
+# (HTTP 200 with a "404" body). Each is mapped to the page that now covers it.
 # ---------------------------------------------------------------------------
 
+/weight-loss-solutions        /medical-weight-loss/   301!
+/family-medicine-clinic       /clinical-care/         301!
+/medical-urgent-care          /clinical-care/         301!
+/orthopedic-sports-medicine   /clinical-care/         301!
+
+# /laser-hair-removal was live and is the strongest-performing service URL on
+# the old site. It is folded into the laser hub, which covers hair removal
+# first and by name. Revisit if rankings dip after launch.
+/laser-hair-removal           /laser-treatments/      301!
+
 # ---------------------------------------------------------------------------
-# LEGACY SERVICE-LINK 301s — NOT YET POPULATED
+# PHASE 2 SERVICES — parked at the laser hub
 #
-# Six of the nine service links on the current homepage 404. Map each old URL
-# to its new service page once the page list is final.
+# EmSculpt NEO, Botox and hair restoration are out of the current scope. Their
+# old URLs 404 today, so they point at the laser hub until those pages are
+# built rather than staying dead.
+# ---------------------------------------------------------------------------
+
+/emsculpt-neo                 /laser-treatments/      301!
+/botox-treatments             /laser-treatments/      301!
+
+# /hair-restoration — slug NOT yet verified against the old site. Do not
+# enable until confirmed; a wrong 301 hides the problem instead of fixing it.
+# /hair-restoration           /laser-treatments/      301!
+
+# ---------------------------------------------------------------------------
+# LEGACY ARTICLE 301s — NOT YET POPULATED
+#
+# The previous WordPress site published roughly 40 articles and 31 real slugs
+# have been recovered from ranking data. The Tirzepatide article ranks 2nd
+# nationally and is currently 404ing, as is the blog index. These are part of
+# the separate article-recovery engagement and go in here once that starts.
+# Do not guess slugs — a wrong 301 is worse than a 404.
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
