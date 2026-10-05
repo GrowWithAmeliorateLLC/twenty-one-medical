@@ -46,10 +46,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "postalCode": "28134",
     "addressCountry": "US"
   },
-  "medicalSpecialty": ["PrimaryCare", "Emergency", "Endocrine"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:30",
+      "closes": "17:00"
+    }
+  ],
+  "medicalSpecialty": ["PrimaryCare", "Endocrine"],
   "availableService": [
     {"@type": "MedicalTherapy", "name": "Medical weight loss"},
     {"@type": "MedicalTherapy", "name": "Hormone replacement therapy"},
+    {"@type": "MedicalTherapy", "name": "Peptide therapy"},
     {"@type": "MedicalTherapy", "name": "IV therapy"},
     {"@type": "MedicalTherapy", "name": "Laser hair removal"}
   ]
@@ -70,9 +79,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-links" id="navLinks">
       <a href="/medical-weight-loss/">Weight Loss</a>
       <a href="/hormone-replacement-therapy/" aria-current="page">Hormones</a>
+      <a href="/peptide-therapy/">Peptides</a>
       <a href="/iv-therapy/">IV Therapy</a>
-      <a href="/laser-treatments/">Laser</a>
-      <a href="/clinical-care/">Clinical Care</a>
+      <a href="/laser-treatments/">Aesthetics</a>
+      <a href="/clinical-care/">Primary Care</a>
       <a href="/contact/">Contact</a>
     </div>
     <a class="btn btn-gold" href="/book-online/">Book a Visit</a>
@@ -139,6 +149,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <details><summary>How long before I feel different?</summary><p>It varies by person and by therapy. Most people notice changes over weeks rather than days, which is why the follow-up labs matter as much as the first prescription.</p></details>
         <details><summary>Is pellet therapy permanent?</summary><p>No. Pellets release over a period of months and are re-placed on a schedule. If it is not working for you, you stop.</p></details>
         <details><summary>Do you treat both men and women?</summary><p>Yes. Both are treated here, and both start the same way &mdash; with a full panel.</p></details>
+        <details><summary>Is hormone therapy covered by insurance?</summary><p>It depends on the plan and the therapy. Pellet procedures in particular are often not covered. Call the office and we will check yours before you book.</p></details>
       </div>
     </div>
     <aside class="side">
@@ -149,12 +160,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="margin:12px 0 0;text-align:center"><a href="tel:7042275060" style="font-weight:700">704-227-5060</a></p>
       </div>
       <div class="sidecard">
+        <h3>Office hours</h3>
+        <p style="margin:0">Monday&ndash;Friday<br><strong>8:30am &ndash; 5:00pm</strong></p>
+      </div>
+      <div class="sidecard">
         <h3>Also at the clinic</h3>
         <ul>
           <li><a href="/medical-weight-loss/">Medical weight loss</a></li>
+          <li><a href="/peptide-therapy/">Peptide therapy</a></li>
           <li><a href="/iv-therapy/">IV therapy</a></li>
-          <li><a href="/laser-treatments/">Laser treatments</a></li>
-          <li><a href="/clinical-care/">Family medicine &amp; urgent care</a></li>
+          <li><a href="/laser-treatments/">Aesthetics</a></li>
+          <li><a href="/clinical-care/">Primary &amp; same-day care</a></li>
         </ul>
       </div>
     </aside>
@@ -165,8 +181,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="sec-head"><span class="eyebrow">Keep looking</span><h2>Other care under the same roof.</h2></div>
     <div class="related">
       <a href="/medical-weight-loss/"><b>Medical Weight Loss</b><span>Hormones and weight are the same conversation more often than not.</span></a>
-      <a href="/iv-therapy/"><b>IV Therapy</b><span>Hydration, energy and recovery drips.</span></a>
-      <a href="/clinical-care/"><b>Clinical Care</b><span>Family medicine, urgent care and orthopedics.</span></a>
+      <a href="/peptide-therapy/"><b>Peptide Therapy</b><span>Medically supervised, after an exam and lab work.</span></a>
+      <a href="/clinical-care/"><b>Primary &amp; Same-Day Care</b><span>Family medicine, acute visits and orthopedics.</span></a>
     </div>
   </div>
 </section>
@@ -191,16 +207,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div><b>Programs</b><ul>
       <li><a href="/medical-weight-loss/">Medical Weight Loss</a></li>
       <li><a href="/hormone-replacement-therapy/">Hormone Replacement</a></li>
+      <li><a href="/peptide-therapy/">Peptide Therapy</a></li>
       <li><a href="/iv-therapy/">IV Therapy</a></li>
-      <li><a href="/laser-treatments/">Laser Treatments</a></li>
+      <li><a href="/laser-treatments/">Aesthetics</a></li>
     </ul></div>
     <div><b>Clinical</b><ul>
       <li><a href="/clinical-care/">Family Medicine</a></li>
-      <li><a href="/clinical-care/#urgent">Urgent Care</a></li>
+      <li><a href="/clinical-care/#sameday">Same-Day Care</a></li>
       <li><a href="/clinical-care/#ortho">Orthopedics</a></li>
       <li><a href="/clinical-care/#dot">DOT Physicals</a></li>
     </ul></div>
     <div><b>Visit</b><ul>
+      <li><a href="/about/">About Shawn O'Keefe, PA-C</a></li>
       <li><a href="/book-online/">Request an appointment</a></li>
       <li><a href="/contact/">Contact &amp; directions</a></li>
       <li><a href="tel:7042275060">704-227-5060</a></li>
