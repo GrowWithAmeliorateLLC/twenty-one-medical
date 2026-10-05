@@ -46,10 +46,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "postalCode": "28134",
     "addressCountry": "US"
   },
-  "medicalSpecialty": ["PrimaryCare", "Emergency", "Endocrine"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:30",
+      "closes": "17:00"
+    }
+  ],
+  "medicalSpecialty": ["PrimaryCare", "Endocrine"],
   "availableService": [
     {"@type": "MedicalTherapy", "name": "Medical weight loss"},
     {"@type": "MedicalTherapy", "name": "Hormone replacement therapy"},
+    {"@type": "MedicalTherapy", "name": "Peptide therapy"},
     {"@type": "MedicalTherapy", "name": "IV therapy"},
     {"@type": "MedicalTherapy", "name": "Laser hair removal"}
   ]
@@ -70,9 +79,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-links" id="navLinks">
       <a href="/medical-weight-loss/">Weight Loss</a>
       <a href="/hormone-replacement-therapy/">Hormones</a>
+      <a href="/peptide-therapy/">Peptides</a>
       <a href="/iv-therapy/">IV Therapy</a>
-      <a href="/laser-treatments/" aria-current="page">Laser</a>
-      <a href="/clinical-care/">Clinical Care</a>
+      <a href="/laser-treatments/" aria-current="page">Aesthetics</a>
+      <a href="/clinical-care/">Primary Care</a>
       <a href="/contact/">Contact</a>
     </div>
     <a class="btn btn-gold" href="/book-online/">Book a Visit</a>
@@ -90,7 +100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </g>
   </svg>
   <div class="shell">
-    <div class="crumb"><a href="/">Home</a> <span>/</span> Laser Treatments</div>
+    <div class="crumb"><a href="/">Home</a> <span>/</span> Aesthetics</div>
     <span class="tagpill" style="margin-top:14px"><i>+</i> Laser treatments &middot; Pineville, NC</span>
     <h1>Laser treatments with a <em>clinician</em> in the building.</h1>
     <p class="lede">Laser hair removal and skin rejuvenation on medical-grade equipment &mdash; for men and women, inside a medical clinic rather than a storefront.</p>
@@ -129,16 +139,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <tr><td><b>Aesthetic consultation</b></td><td class="note">The starting point for any laser treatment &mdash; bookable online.</td></tr>
         </tbody>
       </table>
-      <p style="margin-top:14px">Pricing varies by area and by the number of sessions in the series. Call <a href="tel:7042275060"><strong>704-227-5060</strong></a> for current pricing, or ask at the consultation.</p>
+      <p style="margin-top:14px">Pricing varies by area and by the number of sessions in the series. Aesthetic treatments are not covered by insurance. Call <a href="tel:7042275060"><strong>704-227-5060</strong></a> for current pricing, or ask at the consultation.</p>
 
       <div class="mednote"><b>Start with the consultation.</b> Request an <strong>Aesthetics Consult</strong> online. Treatment sessions are scheduled from there, once we know what we are treating and how many sessions it will take.</div>
+
+      <h2>Before your session</h2>
+      <p>You will get instructions specific to you and to the area being treated at your consultation. In general, for laser hair removal:</p>
+      <ul>
+        <li><strong>Shave the area</strong> the day before or the morning of &mdash; the laser targets the follicle below the surface, and surface hair only scatters the energy</li>
+        <li><strong>Do not wax, pluck, thread or use depilatory creams</strong> for several weeks beforehand &mdash; these remove the follicle the laser needs to find</li>
+        <li><strong>Avoid sun exposure and tanning beds</strong> on the area, and skip self-tanner &mdash; treating recently tanned skin raises the risk of burns and pigment changes</li>
+        <li><strong>Mention retinoids, acne medication and antibiotics</strong> &mdash; some increase light sensitivity and may mean rescheduling</li>
+        <li><strong>Come with the area clean</strong>, free of lotion, deodorant and makeup</li>
+        <li><strong>Tell us about any active infection, cold sore, rash or open skin</strong> in the area &mdash; we will reschedule rather than treat over it</li>
+      </ul>
+      <div class="mednote">If you are pregnant or breastfeeding, or have a history of keloid scarring or a photosensitising condition, say so at the consultation. It changes what is appropriate.</div>
 
       <h2>Common questions</h2>
       <div class="faq">
         <details><summary>How many sessions will I need?</summary><p>It depends on the area, your hair, and your skin. Anyone who gives you a number before looking at you is guessing. You will get a realistic range at the consultation.</p></details>
         <details><summary>Does it hurt?</summary><p>Most people describe it as a snap rather than a burn, and it is brief. Sensitivity varies by area.</p></details>
         <details><summary>Can men be treated?</summary><p>Yes, and a good share of our laser hair removal patients are men &mdash; back, chest and shoulders in particular.</p></details>
-        <details><summary>What do I need to do before a session?</summary><p>You will get specific instructions at the consultation. In general: avoid sun exposure on the area, and do not wax or pluck beforehand &mdash; the laser needs the follicle intact.</p></details>
+        <details><summary>Should I shave or wax before a session?</summary><p>Shave, do not wax. Shaving leaves the follicle intact for the laser to target; waxing and plucking remove it, which is why they are ruled out for several weeks beforehand.</p></details>
+        <details><summary>Can I be treated if I have a tan?</summary><p>Not safely. Recently tanned or self-tanned skin raises the risk of burns and pigment changes, so we will ask you to let it fade and reschedule.</p></details>
+        <details><summary>Is any of this covered by insurance?</summary><p>No. Aesthetic treatments are self-pay. Call the office for current pricing.</p></details>
       </div>
     </div>
     <aside class="side">
@@ -149,12 +173,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p style="margin:12px 0 0;text-align:center"><a href="tel:7042275060" style="font-weight:700">704-227-5060</a></p>
       </div>
       <div class="sidecard">
+        <h3>Office hours</h3>
+        <p style="margin:0">Monday&ndash;Friday<br><strong>8:30am &ndash; 5:00pm</strong></p>
+      </div>
+      <div class="sidecard">
         <h3>Also at the clinic</h3>
         <ul>
           <li><a href="/medical-weight-loss/">Medical weight loss</a></li>
           <li><a href="/hormone-replacement-therapy/">Hormone replacement</a></li>
+          <li><a href="/peptide-therapy/">Peptide therapy</a></li>
           <li><a href="/iv-therapy/">IV therapy</a></li>
-          <li><a href="/clinical-care/">Family medicine &amp; urgent care</a></li>
+          <li><a href="/clinical-care/">Primary &amp; same-day care</a></li>
         </ul>
       </div>
     </aside>
@@ -191,16 +220,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div><b>Programs</b><ul>
       <li><a href="/medical-weight-loss/">Medical Weight Loss</a></li>
       <li><a href="/hormone-replacement-therapy/">Hormone Replacement</a></li>
+      <li><a href="/peptide-therapy/">Peptide Therapy</a></li>
       <li><a href="/iv-therapy/">IV Therapy</a></li>
-      <li><a href="/laser-treatments/">Laser Treatments</a></li>
+      <li><a href="/laser-treatments/">Aesthetics</a></li>
     </ul></div>
     <div><b>Clinical</b><ul>
       <li><a href="/clinical-care/">Family Medicine</a></li>
-      <li><a href="/clinical-care/#urgent">Urgent Care</a></li>
+      <li><a href="/clinical-care/#sameday">Same-Day Care</a></li>
       <li><a href="/clinical-care/#ortho">Orthopedics</a></li>
       <li><a href="/clinical-care/#dot">DOT Physicals</a></li>
     </ul></div>
     <div><b>Visit</b><ul>
+      <li><a href="/about/">About Shawn O'Keefe, PA-C</a></li>
       <li><a href="/book-online/">Request an appointment</a></li>
       <li><a href="/contact/">Contact &amp; directions</a></li>
       <li><a href="tel:7042275060">704-227-5060</a></li>
