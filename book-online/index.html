@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Request an appointment at Twenty-One Medical in Pineville, NC. New patients, follow-ups, telehealth, physicals and aesthetic consultations. Walk-ins welcome for urgent care.">
+<meta name="description" content="Request an appointment at Twenty-One Medical in Pineville, NC. New patients, follow-ups, telehealth, physicals and aesthetic consultations. Walk-ins welcome for same-day care.">
 <title>Request an Appointment | Twenty-One Medical, Pineville NC</title>
 <link rel="canonical" href="https://twentyonemedical.com/book-online/">
 <!-- BugHerd client feedback - staging hosts only. -->
@@ -48,10 +48,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "postalCode": "28134",
     "addressCountry": "US"
   },
-  "medicalSpecialty": ["PrimaryCare", "Emergency", "Endocrine"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:30",
+      "closes": "17:00"
+    }
+  ],
+  "medicalSpecialty": ["PrimaryCare", "Endocrine"],
   "availableService": [
     {"@type": "MedicalTherapy", "name": "Medical weight loss"},
     {"@type": "MedicalTherapy", "name": "Hormone replacement therapy"},
+    {"@type": "MedicalTherapy", "name": "Peptide therapy"},
     {"@type": "MedicalTherapy", "name": "IV therapy"},
     {"@type": "MedicalTherapy", "name": "Laser hair removal"}
   ]
@@ -72,9 +81,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-links" id="navLinks">
       <a href="/medical-weight-loss/">Weight Loss</a>
       <a href="/hormone-replacement-therapy/">Hormones</a>
+      <a href="/peptide-therapy/">Peptides</a>
       <a href="/iv-therapy/">IV Therapy</a>
-      <a href="/laser-treatments/">Laser</a>
-      <a href="/clinical-care/">Clinical Care</a>
+      <a href="/laser-treatments/">Aesthetics</a>
+      <a href="/clinical-care/">Primary Care</a>
       <a href="/contact/">Contact</a>
     </div>
     <a class="btn btn-gold" href="/book-online/">Book a Visit</a>
@@ -95,7 +105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="crumb"><a href="/">Home</a> <span>/</span> Request an Appointment</div>
     <span class="tagpill" style="margin-top:14px"><i>+</i> Online scheduling</span>
     <h1>Request a visit, <em>online</em>.</h1>
-    <p class="lede">Choose a visit type and a time and send it straight to the clinic. The office confirms by email. Urgent care is walk-in &mdash; no appointment needed.</p>
+    <p class="lede">Choose a visit type and a time and send it straight to the clinic. The office confirms by email. Same-day problems are walk-in &mdash; no appointment needed.</p>
     <div class="hero-cta">
       <a class="btn btn-gold" href="tel:7042275060">Call the office</a>
       <a class="callpill" href="tel:7042275060"><i>&#9742;</i>704-227-5060</a>
@@ -133,7 +143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>Friday lab draws run from a separate schedule. Select the lab office in the widget if that is what you need.</p>
 
           <h2>If you need to be seen today</h2>
-          <p><strong>Walk in.</strong> Urgent care visits do not require an appointment during office hours. For anything you think may be an emergency &mdash; chest pain, difficulty breathing, severe bleeding, head injury or stroke symptoms &mdash; go to an emergency room or call 911.</p>
+          <p><strong>Walk in.</strong> Same-day visits for acute problems do not require an appointment during office hours, Monday to Friday, 8:30am to 5:00pm. For anything you think may be an emergency &mdash; chest pain, difficulty breathing, severe bleeding, head injury or stroke symptoms &mdash; go to an emergency room or call 911.</p>
 
           <h2>Rather just call?</h2>
           <p>Call <a href="tel:7042275060"><strong>704-227-5060</strong></a> during office hours and speak to someone. Some things are faster that way.</p>
@@ -148,6 +158,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li>Choose the visit type that fits &mdash; if you are unsure, pick New Patient</li>
             <li>Watch for the confirmation email before you travel</li>
           </ul>
+        </div>
+        <div class="sidecard">
+          <h3>Office hours</h3>
+          <p style="margin:0">Monday&ndash;Friday<br><strong>8:30am &ndash; 5:00pm</strong></p>
         </div>
         <div class="sidecard">
           <h3>Visit us</h3>
@@ -169,16 +183,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div><b>Programs</b><ul>
       <li><a href="/medical-weight-loss/">Medical Weight Loss</a></li>
       <li><a href="/hormone-replacement-therapy/">Hormone Replacement</a></li>
+      <li><a href="/peptide-therapy/">Peptide Therapy</a></li>
       <li><a href="/iv-therapy/">IV Therapy</a></li>
-      <li><a href="/laser-treatments/">Laser Treatments</a></li>
+      <li><a href="/laser-treatments/">Aesthetics</a></li>
     </ul></div>
     <div><b>Clinical</b><ul>
       <li><a href="/clinical-care/">Family Medicine</a></li>
-      <li><a href="/clinical-care/#urgent">Urgent Care</a></li>
+      <li><a href="/clinical-care/#sameday">Same-Day Care</a></li>
       <li><a href="/clinical-care/#ortho">Orthopedics</a></li>
       <li><a href="/clinical-care/#dot">DOT Physicals</a></li>
     </ul></div>
     <div><b>Visit</b><ul>
+      <li><a href="/about/">About Shawn O'Keefe, PA-C</a></li>
       <li><a href="/book-online/">Request an appointment</a></li>
       <li><a href="/contact/">Contact &amp; directions</a></li>
       <li><a href="tel:7042275060">704-227-5060</a></li>
