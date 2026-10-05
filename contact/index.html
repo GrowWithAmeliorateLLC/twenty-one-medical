@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Twenty-One Medical, 11940 Carolina Place Parkway Suite 100, Pineville NC 28134. Call 704-227-5060, request an appointment online, or walk in for urgent care.">
+<meta name="description" content="Twenty-One Medical, 11940 Carolina Place Parkway Suite 100, Pineville NC 28134. Call 704-227-5060, request an appointment online, or walk in for same-day care.">
 <title>Contact &amp; Directions | Twenty-One Medical, Pineville NC</title>
 <link rel="canonical" href="https://twentyonemedical.com/contact/">
 <!-- BugHerd client feedback - staging hosts only. -->
@@ -46,10 +46,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "postalCode": "28134",
     "addressCountry": "US"
   },
-  "medicalSpecialty": ["PrimaryCare", "Emergency", "Endocrine"],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:30",
+      "closes": "17:00"
+    }
+  ],
+  "medicalSpecialty": ["PrimaryCare", "Endocrine"],
   "availableService": [
     {"@type": "MedicalTherapy", "name": "Medical weight loss"},
     {"@type": "MedicalTherapy", "name": "Hormone replacement therapy"},
+    {"@type": "MedicalTherapy", "name": "Peptide therapy"},
     {"@type": "MedicalTherapy", "name": "IV therapy"},
     {"@type": "MedicalTherapy", "name": "Laser hair removal"}
   ]
@@ -70,9 +79,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-links" id="navLinks">
       <a href="/medical-weight-loss/">Weight Loss</a>
       <a href="/hormone-replacement-therapy/">Hormones</a>
+      <a href="/peptide-therapy/">Peptides</a>
       <a href="/iv-therapy/">IV Therapy</a>
-      <a href="/laser-treatments/">Laser</a>
-      <a href="/clinical-care/">Clinical Care</a>
+      <a href="/laser-treatments/">Aesthetics</a>
+      <a href="/clinical-care/">Primary Care</a>
       <a href="/contact/" aria-current="page">Contact</a>
     </div>
     <a class="btn btn-gold" href="/book-online/">Book a Visit</a>
@@ -111,14 +121,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <ul class="contact-rows">
         <li><b>Address</b><a href="https://www.google.com/maps/search/?api=1&amp;query=11940+Carolina+Place+Parkway+Suite+100+Pineville+NC+28134" target="_blank" rel="noopener">11940 Carolina Place Parkway, Suite 100<br>Pineville, NC 28134</a></li>
         <li><b>Phone</b><a href="tel:7042275060">704-227-5060</a></li>
+        <li><b>Office hours</b>Monday&ndash;Friday, 8:30am &ndash; 5:00pm</li>
         <li><b>Appointments</b><a href="/book-online/">Request a visit online</a></li>
-        <li><b>Walk-ins</b>Urgent care during office hours &mdash; no appointment needed</li>
+        <li><b>Walk-ins</b>Same-day care and IV therapy during office hours &mdash; no appointment needed</li>
         <li><b>Telehealth</b>Video visits for patients in North Carolina and South Carolina</li>
         <li><b>Lab draws</b>Fridays, from a separate schedule &mdash; select the lab office when requesting</li>
       </ul>
-      <div class="ph info" style="margin-top:22px">
-        <b>Office hours</b>
-        <span>Confirm the current hours for each day, including whether Saturday hours still run and the Friday lab-draw window, so the website, Google and the front desk all say the same thing.</span>
+      <div class="sidecard" style="margin-top:22px">
+        <h3>Office hours</h3>
+        <p style="margin:0"><strong>Monday&ndash;Friday</strong><br>8:30am &ndash; 5:00pm</p>
+        <p style="margin:10px 0 0">Walk-ins are seen during office hours for same-day problems and IV therapy. Lab draws run Fridays on a separate schedule.</p>
+        <p style="margin:10px 0 0">If you are not sure whether to walk in or book, call <a href="tel:7042275060"><strong>704-227-5060</strong></a>.</p>
       </div>
     </div>
     <div>
@@ -141,10 +154,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="shell">
     <div class="sec-head"><span class="eyebrow">Before you call</span><h2>The quick answers.</h2></div>
     <div class="faq" style="max-width:64ch">
-      <details><summary>Do I need an appointment for urgent care?</summary><p>No. Walk in during office hours.</p></details>
+      <details><summary>Do I need an appointment for a same-day problem?</summary><p>No. Walk in during office hours, Monday to Friday, 8:30am to 5:00pm.</p></details>
       <details><summary>How do I get a prescription refilled?</summary><p>Call the office. For weight-loss medication, request a Weight Loss Follow Up / Medication Pick Up visit online.</p></details>
       <details><summary>How do I get my lab results?</summary><p>Results are reviewed at a follow-up visit so someone can actually explain them. Call if you have not heard back when you expected to.</p></details>
       <details><summary>Is this an emergency room?</summary><p>No. For chest pain, difficulty breathing, severe bleeding, head injury or stroke symptoms, go to an emergency room or call 911.</p></details>
+      <details><summary>Do you see children?</summary><p>From about age five upward, for things like a minor injury, an ear infection or a sore throat. This is not a pediatric practice and we do not administer vaccines, so children should still have their own pediatrician.</p></details>
     </div>
   </div>
 </section>
@@ -169,16 +183,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div><b>Programs</b><ul>
       <li><a href="/medical-weight-loss/">Medical Weight Loss</a></li>
       <li><a href="/hormone-replacement-therapy/">Hormone Replacement</a></li>
+      <li><a href="/peptide-therapy/">Peptide Therapy</a></li>
       <li><a href="/iv-therapy/">IV Therapy</a></li>
-      <li><a href="/laser-treatments/">Laser Treatments</a></li>
+      <li><a href="/laser-treatments/">Aesthetics</a></li>
     </ul></div>
     <div><b>Clinical</b><ul>
       <li><a href="/clinical-care/">Family Medicine</a></li>
-      <li><a href="/clinical-care/#urgent">Urgent Care</a></li>
+      <li><a href="/clinical-care/#sameday">Same-Day Care</a></li>
       <li><a href="/clinical-care/#ortho">Orthopedics</a></li>
       <li><a href="/clinical-care/#dot">DOT Physicals</a></li>
     </ul></div>
     <div><b>Visit</b><ul>
+      <li><a href="/about/">About Shawn O'Keefe, PA-C</a></li>
       <li><a href="/book-online/">Request an appointment</a></li>
       <li><a href="/contact/">Contact &amp; directions</a></li>
       <li><a href="tel:7042275060">704-227-5060</a></li>
