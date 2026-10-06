@@ -76,10 +76,14 @@
   .ph.dark::before{color:rgba(255,255,255,.6)}
 
   /* ---------- provider portrait ---------- */
-  /* object-position favours the top of the frame so the face survives any
-     future ratio change. width/height are declared in the markup too, so the
-     layout does not shift while the image loads. */
-  .portrait{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;
+  /* height:auto is load-bearing: the img carries width/height attributes so the
+     layout reserves space before it loads, and those map to presentational
+     width/height properties. aspect-ratio only computes a dimension when the
+     other is auto, so without this the attribute height wins and the portrait
+     renders stretched. Same reason .shot in photos.css sets height:auto.
+     object-position favours the top of the frame so the face survives any
+     future change of ratio. */
+  .portrait{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;
     object-position:center top;border-radius:var(--r);box-shadow:var(--shadow-sm)}
   .hero-art .portrait{position:relative;z-index:1;width:min(74%,19rem);
     border-radius:200px 200px 20px 20px;box-shadow:var(--shadow-lg)}
