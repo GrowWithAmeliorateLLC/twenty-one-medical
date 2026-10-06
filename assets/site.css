@@ -75,6 +75,16 @@
   .ph.dark span{color:rgba(255,255,255,.72)}
   .ph.dark::before{color:rgba(255,255,255,.6)}
 
+  /* ---------- provider portrait ---------- */
+  /* object-position favours the top of the frame so the face survives any
+     future ratio change. width/height are declared in the markup too, so the
+     layout does not shift while the image loads. */
+  .portrait{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;
+    object-position:center top;border-radius:var(--r);box-shadow:var(--shadow-sm)}
+  .hero-art .portrait{position:relative;z-index:1;width:min(74%,19rem);
+    border-radius:200px 200px 20px 20px;box-shadow:var(--shadow-lg)}
+  .prose .portrait{max-width:22rem;margin-bottom:28px}
+
   /* ---------- nav ---------- */
   nav{background:var(--paper);border-bottom:1px solid var(--rule-soft);position:relative;z-index:5}
   .nav-in{display:flex;align-items:center;gap:22px;padding-block:16px;flex-wrap:wrap}
