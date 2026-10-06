@@ -2,7 +2,16 @@
     --navy:#102a4c;
     --navy-deep:#0a1c33;
     --navy-soft:#2b4a75;
+    /* Three teals, three jobs:
+       --teal        fills, dots, borders, button backgrounds (decorative, or a
+                     background carrying its own dark text - not the measured thing)
+       --teal-accent LARGE text, >=18.66px bold, AA threshold 3.0
+                     3.76:1 on --paper, 3.13:1 on --band
+       --teal-ink    SMALL text, AA threshold 4.5
+                     5.66:1 on --paper, 4.71:1 on --band
+       The brand teal #3fa9a4 measures 2.72 / 2.26 and fails as text on both. */
     --teal:#3fa9a4;
+    --teal-accent:#318e8a;
     --teal-ink:#256f6b;
     --teal-wash:#dcefee;
     --marigold:#e8a723;
@@ -25,7 +34,9 @@
       --navy:#8fb3e0;
       --navy-deep:#0c1622;
       --navy-soft:#a9c4e8;
+      /* on dark surfaces the light teal already passes, so all three match */
       --teal:#5cc9c3;
+      --teal-accent:#5cc9c3;
       --teal-ink:#5cc9c3;
       --teal-wash:#14322f;
       --marigold:#f0bc4e;
@@ -45,7 +56,8 @@
   }
   :root[data-theme="dark"]{
     --navy:#8fb3e0; --navy-deep:#0c1622; --navy-soft:#a9c4e8;
-    --teal:#5cc9c3; --teal-ink:#5cc9c3; --teal-wash:#14322f; --marigold:#f0bc4e; --coral:#f07d5b;
+    --teal:#5cc9c3; --teal-accent:#5cc9c3; --teal-ink:#5cc9c3;
+    --teal-wash:#14322f; --marigold:#f0bc4e; --coral:#f07d5b;
     --cream:#16202b; --band:#182334; --paper:#101822; --card:#18222e;
     --ink:#e8eef6; --ink-soft:#a3b2c4; --ink-faint:#7c8b9e;
     --rule:rgba(232,238,246,.17); --rule-soft:rgba(232,238,246,.09);
@@ -96,7 +108,7 @@
     color:var(--navy);display:flex;align-items:center;gap:8px}
   .logo .dot{width:26px;height:26px;border-radius:50%;background:var(--teal);display:grid;
     place-items:center;font-size:.72rem;color:#04211f;font-weight:800;letter-spacing:0}
-  .logo span{color:var(--teal)}
+  .logo span{color:var(--teal-accent)}
   .nav-links{display:flex;gap:19px;font-size:.87rem;font-weight:500;color:var(--ink-soft);flex-wrap:wrap}
   .nav-links a{text-decoration:none;display:inline-flex;align-items:center;gap:4px}
   .nav-links a:hover{color:var(--navy)}
@@ -128,7 +140,7 @@
     place-items:center;font-style:normal;font-size:.68rem;color:#04211f;line-height:1}
 
   .hero h1{font-size:clamp(2.4rem,5.6vw,4rem);margin:20px 0 18px;color:var(--navy)}
-  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero h1 em{font-style:normal;color:var(--teal-accent)}
   .hero p.lede{font-size:1.05rem;color:var(--ink-soft);max-width:44ch}
   .hero-cta{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;align-items:center}
   .callpill{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;
@@ -268,7 +280,7 @@
 .phero .contours{position:absolute;inset:0;opacity:.5;pointer-events:none}
 .phero .shell{position:relative;z-index:2}
 .phero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);margin:18px 0 16px;color:var(--navy);max-width:20ch}
-.phero h1 em{font-style:normal;color:var(--teal)}
+.phero h1 em{font-style:normal;color:var(--teal-accent)}
 .phero p.lede{font-size:1.05rem;color:var(--ink-soft);max-width:52ch}
 .phero .hero-cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap;align-items:center}
 
