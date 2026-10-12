@@ -26,3 +26,23 @@
 
 /* a caption under a photo, for crediting or explaining what it shows */
 .shot-note{font-size:.78rem;color:var(--ink-faint);margin-top:7px}
+
+/* ---------- focal points for portrait-source photos ----------
+   Every .shot is object-fit:cover inside a fixed height, so the browser
+   letterboxes whatever it is handed regardless of the file's aspect ratio.
+   A portrait source therefore centre-crops to a band through its middle,
+   which on these two lands on dead fabric and bare tubing respectively.
+   Steer the band rather than re-cropping the file: the whole image stays
+   on disk, and re-framing is this percentage, not a new export.
+   Lower number = show more of the top. */
+.shot.fp-weightloss{object-position:center 58%}
+.shot.fp-iv{object-position:center 26%}
+
+/* ---------- clinic gallery ----------
+   Genuine photographs of Suite 100, as distinct from the stock imagery on
+   the service cards. Taller than a service thumbnail because these are the
+   subject rather than a label. */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:16px}
+.gallery figure{margin:0}
+.gallery .shot{height:220px;border-radius:var(--r)}
+.gallery figcaption{font-size:.82rem;font-weight:600;color:var(--ink-soft);margin-top:8px}
