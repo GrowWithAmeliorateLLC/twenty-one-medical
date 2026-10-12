@@ -34,9 +34,14 @@
    which on these two lands on dead fabric and bare tubing respectively.
    Steer the band rather than re-cropping the file: the whole image stays
    on disk, and re-framing is this percentage, not a new export.
-   Lower number = show more of the top. */
+   Lower number = show more of the top.
+
+   fp-iv is 38% rather than centred for a second reason: the bottle in that
+   photo carries a Cyrillic label for a European infusion solution that is
+   not on this clinic's drip menu. 38% clips it to the top edge and puts the
+   drip chamber in frame instead. Do not raise it. */
 .shot.fp-weightloss{object-position:center 58%}
-.shot.fp-iv{object-position:center 26%}
+.shot.fp-iv{object-position:center 38%}
 
 /* ---------- clinic gallery ----------
    Genuine photographs of Suite 100, as distinct from the stock imagery on
