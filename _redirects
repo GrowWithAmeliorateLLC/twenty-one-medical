@@ -83,21 +83,33 @@
 /services/                    /                       301!
 
 # ---------------------------------------------------------------------------
-# TRAILING-SLASH NORMALISATION
+# DO NOT ADD TRAILING-SLASH RULES. THEY CAUSE A REDIRECT LOOP.
 #
-# netlify.toml sets pretty_urls = false, which switches off Netlify's
-# automatic directory trailing-slash redirect. Without the rules below,
-# /about would not resolve to /about/ and six indexed URLs whose names did
-# NOT change would still 404 at cutover. These are the easiest rules to
-# forget precisely because the slug looks already-correct.
+# It is tempting to add rules like:
+#
+#     /about                  /about/                 301!      # <-- BREAKS
+#
+# on the reasoning that netlify.toml sets pretty_urls = false and therefore
+# bare /about will not reach /about/. That reasoning is wrong twice over:
+#
+#   1. pretty_urls only controls whether ".html" is stripped from URLs. It
+#      does not switch off the asset server's own directory redirect, so
+#      Netlify already 301s /about to /about/ with no rule at all.
+#   2. Netlify IGNORES the trailing slash when matching a _redirects source,
+#      so the source "/about" matches /about/ too. The rule then redirects
+#      /about/ to itself, and the "!" forces it even though /about/index.html
+#      exists. The page becomes an infinite loop.
+#
+# This was added and reverted on 10/18/2026. It took out /about/, /contact/,
+# /book-online/, /iv-therapy/, /hormone-replacement-therapy/ and
+# /peptide-therapy/ — six of the ten pages — and the only reason it was
+# caught is that every rule was fetch-tested on staging instead of being
+# assumed to work. Test the rules, not just the file.
+#
+# The same hazard applies to any rule whose source and destination differ
+# only by a trailing slash. The cross-page rules above are safe because
+# source and destination are genuinely different paths.
 # ---------------------------------------------------------------------------
-
-/about                        /about/                 301!
-/contact                      /contact/               301!
-/book-online                  /book-online/           301!
-/iv-therapy                   /iv-therapy/            301!
-/hormone-replacement-therapy  /hormone-replacement-therapy/  301!
-/peptide-therapy              /peptide-therapy/       301!
 
 # ---------------------------------------------------------------------------
 # BLOG
