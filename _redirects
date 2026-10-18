@@ -1,48 +1,137 @@
 # Twenty-One Medical — redirects
 # Applies to the twentyonemedical.com Netlify site
 # (repo GrowWithAmeliorateLLC/twenty-one-medical, published from the repo root).
-# Targets are root-relative.
+# Targets are root-relative. First match wins, so order matters.
 
 # ---------------------------------------------------------------------------
-# LEGACY SERVICE-LINK 301s
+# WHY THERE ARE TWO SLUG FAMILIES
 #
-# Six of the nine service links on the old homepage returned soft 404s
-# (HTTP 200 with a "404" body). Each is mapped to the page that now covers it.
+# The old WordPress site exposed the same services under two naming schemes:
+#
+#   long  — /medical-urgent-care, /family-medicine-clinic, ...
+#           these were the links in the old homepage BODY
+#   short — /urgent-care, /family-medicine, ...
+#           these are what sitemap.xml lists, i.e. what Google indexed
+#
+# The first version of this file only covered the long family, because it was
+# built by crawling the old homepage's links. Verified against
+# twentyonemedical.com/sitemap.xml on 10/18/2026: 13 of the 14 indexed URLs
+# had no rule. Both families are now covered.
+#
+# Everything lands at the TOP of the destination page, with no #fragment, on
+# purpose. Someone arriving from an "urgent care" search needs to read the
+# primary-care framing and the "not an emergency facility" note before
+# anything else. Do not add fragments to the clinical-care rules.
 # ---------------------------------------------------------------------------
 
-/weight-loss-solutions        /medical-weight-loss/   301!
+# --- Clinical: family medicine --------------------------------------------
+/family-medicine              /clinical-care/         301!
+/family-medicine/             /clinical-care/         301!
 /family-medicine-clinic       /clinical-care/         301!
+/family-medicine-clinic/      /clinical-care/         301!
+
+# --- Clinical: same-day -----------------------------------------------------
+# The practice is NOT licensed as an urgent care. These old URLs carry
+# rankings and must keep resolving, but the phrase never reappears in any
+# destination page's copy. Do not create a new URL containing it.
+/urgent-care                  /clinical-care/         301!
+/urgent-care/                 /clinical-care/         301!
 /medical-urgent-care          /clinical-care/         301!
+/medical-urgent-care/         /clinical-care/         301!
+
+# --- Clinical: orthopedics --------------------------------------------------
+/orthopedics                  /clinical-care/         301!
+/orthopedics/                 /clinical-care/         301!
 /orthopedic-sports-medicine   /clinical-care/         301!
+/orthopedic-sports-medicine/  /clinical-care/         301!
 
+# --- Weight loss ------------------------------------------------------------
+/weight-loss                  /medical-weight-loss/   301!
+/weight-loss/                 /medical-weight-loss/   301!
+/weight-loss-solutions        /medical-weight-loss/   301!
+/weight-loss-solutions/       /medical-weight-loss/   301!
+
+# --- Aesthetics: everything folds into the laser hub ------------------------
 # /laser-hair-removal was live and is the strongest-performing service URL on
-# the old site. It is folded into the laser hub, which covers hair removal
-# first and by name. Revisit if rankings dip after launch.
+# the old site. The hub covers hair removal first and by name. Revisit if
+# rankings dip after launch.
 /laser-hair-removal           /laser-treatments/      301!
+/laser-hair-removal/          /laser-treatments/      301!
+/skin-rejuvenation            /laser-treatments/      301!
+/skin-rejuvenation/           /laser-treatments/      301!
 
-# ---------------------------------------------------------------------------
-# PHASE 2 SERVICES — parked at the laser hub
-#
-# EmSculpt NEO, Botox and hair restoration are out of the current scope. Their
-# old URLs 404 today, so they point at the laser hub until those pages are
-# built rather than staying dead.
-# ---------------------------------------------------------------------------
-
+# EmSculpt NEO, Botox and hair restoration are out of the current build scope.
+# Their old URLs 404 today, so they point at the laser hub until those pages
+# exist rather than staying dead. EmSculpt NEO is the body-contouring device
+# named on the old site — this file is where that was first recorded.
 /emsculpt-neo                 /laser-treatments/      301!
+/emsculpt-neo/                /laser-treatments/      301!
+/botox                        /laser-treatments/      301!
+/botox/                       /laser-treatments/      301!
 /botox-treatments             /laser-treatments/      301!
+/botox-treatments/            /laser-treatments/      301!
 
-# /hair-restoration — slug NOT yet verified against the old site. Do not
-# enable until confirmed; a wrong 301 hides the problem instead of fixing it.
+# /hair-restoration — slug NOT verified against the old site and NOT in the
+# sitemap. Do not enable until confirmed; a wrong 301 hides the problem
+# instead of fixing it.
 # /hair-restoration           /laser-treatments/      301!
 
+# --- Services overview ------------------------------------------------------
+# The new build has no single services hub. The homepage lists every program,
+# so that is the honest destination.
+/services                     /                       301!
+/services/                    /                       301!
+
 # ---------------------------------------------------------------------------
-# LEGACY ARTICLE 301s — NOT YET POPULATED
+# TRAILING-SLASH NORMALISATION
 #
-# The previous WordPress site published roughly 40 articles and 31 real slugs
-# have been recovered from ranking data. The Tirzepatide article ranks 2nd
-# nationally and is currently 404ing, as is the blog index. These are part of
-# the separate article-recovery engagement and go in here once that starts.
-# Do not guess slugs — a wrong 301 is worse than a 404.
+# netlify.toml sets pretty_urls = false, which switches off Netlify's
+# automatic directory trailing-slash redirect. Without the rules below,
+# /about would not resolve to /about/ and six indexed URLs whose names did
+# NOT change would still 404 at cutover. These are the easiest rules to
+# forget precisely because the slug looks already-correct.
+# ---------------------------------------------------------------------------
+
+/about                        /about/                 301!
+/contact                      /contact/               301!
+/book-online                  /book-online/           301!
+/iv-therapy                   /iv-therapy/            301!
+/hormone-replacement-therapy  /hormone-replacement-therapy/  301!
+/peptide-therapy              /peptide-therapy/       301!
+
+# ---------------------------------------------------------------------------
+# BLOG
+#
+# The old site published roughly 40 articles. The index 404s today. Sending
+# the index to the homepage preserves its link equity; individual article
+# slugs are deliberately absent because guessing one is worse than a 404.
+# 31 real slugs have been recovered from ranking data and go in here when the
+# separate article-recovery engagement starts. The Tirzepatide article ranks
+# 2nd nationally and is the first one to restore.
+# ---------------------------------------------------------------------------
+
+/blog                         /                       301!
+/blog/                        /                       301!
+
+# ---------------------------------------------------------------------------
+# DELIBERATELY NOT REDIRECTED — these are CONTENT GAPS, not routing gaps
+#
+# /privacy-policy
+#   The old site had one. The new build does not. A medical practice site
+#   needs a privacy policy, and pointing it at /contact/ would be worse than
+#   a 404 because it answers a legal question with a phone number. Build the
+#   page, then add the rule.
+#
+# /withcherry-payment-plans
+#   Shawn offers Cherry patient financing. Nothing on the new site mentions
+#   financing at all. Confirm with him whether Cherry is still active before
+#   deciding whether this becomes a page or a redirect.
+#
+# /wp-content/uploads/2024/10/REFERRAL-FAX-COVER-SHEET-rw-word-1.pdf
+#   A referring-provider fax cover sheet, linked from the old homepage. We do
+#   not hold the file. Redirecting a PDF to an HTML page is a poor result for
+#   the referring office trying to download it. Get the file, host it, then
+#   add a rule.
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
