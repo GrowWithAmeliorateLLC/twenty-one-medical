@@ -93,8 +93,8 @@
 # bare /about will not reach /about/. That reasoning is wrong twice over:
 #
 #   1. pretty_urls only controls whether ".html" is stripped from URLs. It
-#      does not switch off the asset server's own directory redirect, so
-#      Netlify already 301s /about to /about/ with no rule at all.
+#      does not switch off the asset server's own directory handling, so
+#      Netlify already serves /about correctly with no rule at all.
 #   2. Netlify IGNORES the trailing slash when matching a _redirects source,
 #      so the source "/about" matches /about/ too. The rule then redirects
 #      /about/ to itself, and the "!" forces it even though /about/index.html
@@ -126,13 +126,7 @@
 /blog/                        /                       301!
 
 # ---------------------------------------------------------------------------
-# DELIBERATELY NOT REDIRECTED — these are CONTENT GAPS, not routing gaps
-#
-# /privacy-policy
-#   The old site had one. The new build does not. A medical practice site
-#   needs a privacy policy, and pointing it at /contact/ would be worse than
-#   a 404 because it answers a legal question with a phone number. Build the
-#   page, then add the rule.
+# STILL NOT REDIRECTED — remaining CONTENT GAPS
 #
 # /withcherry-payment-plans
 #   Shawn offers Cherry patient financing. Nothing on the new site mentions
@@ -144,15 +138,27 @@
 #   not hold the file. Redirecting a PDF to an HTML page is a poor result for
 #   the referring office trying to download it. Get the file, host it, then
 #   add a rule.
+#
+# RESOLVED 10/18/2026: /privacy-policy was a gap and is now a real page at
+# /privacy-policy/. Netlify serves it at the bare path too, so it needs no
+# rule. That page covers the WEBSITE only and says on its face that it is not
+# the practice's HIPAA Notice of Privacy Practices.
 # ---------------------------------------------------------------------------
 
 # ---------------------------------------------------------------------------
-# CANONICAL HOST — ENABLE AT CUTOVER, NOT BEFORE
+# CANONICAL HOST — ENABLED AT CUTOVER 10/18/2026
 #
-# Uncomment the line below only once twentyonemedical.com points at this
-# Netlify project. While the domain still resolves to the old GoDaddy Airo
-# site, this rule bounces the staging URL straight to the OLD live site,
-# which makes the work-in-progress impossible to preview.
+# twentyonemedical.com now points at this Netlify project, so the staging URL
+# is bounced to production. This rule is not cosmetic: noindex and the
+# robots.txt Disallow were both removed at launch, which would otherwise leave
+# twenty-one-medical.netlify.app as a fully indexable duplicate of the live
+# site competing with it in search.
 #
-# https://twenty-one-medical.netlify.app/*  https://twentyonemedical.com/:splat  301!
+# Deploy previews (deploy-preview-123--twenty-one-medical.netlify.app and
+# branch-name--twenty-one-medical.netlify.app) are DIFFERENT hostnames and do
+# not match this rule, so BugHerd review rounds still work there. Future
+# client review should be pointed at a deploy preview, not at the bare
+# staging URL.
 # ---------------------------------------------------------------------------
+
+https://twenty-one-medical.netlify.app/*  https://twentyonemedical.com/:splat  301!
